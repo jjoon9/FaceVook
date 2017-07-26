@@ -213,7 +213,7 @@ public class FriendListFragment extends Fragment {
             switch(viewType){
                 case TYPE_HEADER1:
                 case TYPE_HEADER2:
-                    view = layoutInflater.inflate(R.layout.friend, parent, false);
+                    view = layoutInflater.inflate(R.layout.friend_header, parent, false);
                     return new FriendHeaderHolder(view);
 
                 case TYPE_FRIEND_ITEM:
