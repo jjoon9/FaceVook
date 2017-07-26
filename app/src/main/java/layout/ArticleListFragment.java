@@ -177,7 +177,7 @@ public class ArticleListFragment extends Fragment {
                     articleLab.setArticleLikes(mArticle.getId(),+1);
 //                    mAdapter.notifyItemChanged(getAdapterPosition());//@@내부클래스에서도 밖에 클래스의 멤버변수 참조 가능하네?(mAdapter)
                     mInfoLeft.setText(mArticle.getInfoLeft());
-                    
+                    //@@엥 왜되지?? 콜바이벨류아닌가??@@
 
                 }
             });
