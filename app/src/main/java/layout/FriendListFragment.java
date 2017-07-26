@@ -26,6 +26,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import it.sephiroth.android.library.picasso.Picasso;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -142,8 +144,11 @@ public class FriendListFragment extends Fragment {
 
         public void bindFriend(Friend friend){
             mFriend = friend;
-
-            mProfileImage.setImageBitmap(getImageFromUrl(mFriend.getProfileImage()));
+//            mProfileImage.setImageBitmap(getImageFromUrl(mFriend.getProfileImage()));
+            Picasso.with(getActivity())
+                    .load(mFriend.getProfileImage())
+                    .placeholder(R.drawable.dummy_profile)
+                    .into(mProfileImage);
             mName.setText(mFriend.getName());
             mSiriai.setText("함께 아는 친구 " + mFriend.getSiriai() + "명");
             mAddButton.setOnClickListener(new View.OnClickListener() {

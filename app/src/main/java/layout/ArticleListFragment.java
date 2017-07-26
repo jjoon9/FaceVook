@@ -24,6 +24,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import it.sephiroth.android.library.picasso.Picasso;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -154,9 +156,16 @@ public class ArticleListFragment extends Fragment {
             mArticle = article;
             mWriter.setText(mArticle.getWriter());
             mTime.setText(mArticle.getTime());
-            mProfileImage.setImageBitmap(getImageFromUrl(mArticle.getProfileImage()));
+//            mProfileImage.setImageBitmap(getImageFromUrl(mArticle.getProfileImage()));
+            Picasso.with(getActivity())
+                    .load(mArticle.getProfileImage())
+                    .placeholder(R.drawable.dummy_profile)
+                    .into(mProfileImage);
             mContentText.setText(mArticle.getContentText());
-            mContentImage.setImageBitmap(getImageFromUrl(mArticle.getContentImage()));
+//            mContentImage.setImageBitmap(getImageFromUrl(mArticle.getContentImage()));
+            Picasso.with(getActivity())
+                    .load(mArticle.getContentImage())
+                    .into(mContentImage);
             mInfoLeft.setText(mArticle.getInfoLeft());
             mInfoRight.setText(mArticle.getInfoRight());
             mLikeButton.setOnClickListener(new View.OnClickListener() {
