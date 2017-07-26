@@ -23,6 +23,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.UUID;
 
 import it.sephiroth.android.library.picasso.Picasso;
 
@@ -172,6 +173,12 @@ public class ArticleListFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(getActivity(), "좋아연!", Toast.LENGTH_SHORT).show();
+                    ArticleLab articleLab = ArticleLab.get(getActivity());
+                    articleLab.setArticleLikes(mArticle.getId(),+1);
+//                    mAdapter.notifyItemChanged(getAdapterPosition());//@@내부클래스에서도 밖에 클래스의 멤버변수 참조 가능하네?(mAdapter)
+                    mInfoLeft.setText(mArticle.getInfoLeft());
+                    
+
                 }
             });
             mCommentButton.setOnClickListener(new View.OnClickListener() {

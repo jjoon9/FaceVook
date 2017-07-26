@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.joon.facevook.AcquaintanceLab;
 import com.example.joon.facevook.Friend;
 import com.example.joon.facevook.FriendLab;
 import com.example.joon.facevook.R;

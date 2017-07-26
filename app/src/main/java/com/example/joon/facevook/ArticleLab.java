@@ -87,10 +87,26 @@ public class ArticleLab {
 //        mArticles.add(getExampleArticlesByGraphAPI());
         mArticles.add(getExmapleArticle());
         mArticles.add(getExmapleArticle());
+        mArticles.add(getExmapleArticle());
+        mArticles.add(getExmapleArticle());
+        mArticles.add(getExmapleArticle());
+        mArticles.add(getExmapleArticle());
+        mArticles.add(getExmapleArticle());
+        mArticles.add(getExmapleArticle());
 
 
 
     }
+
+    public void setArticleLikes(UUID id, int likes){
+        for(Article article : mArticles){
+            if (article.getId()==id) {
+                article.setLikes(likes);
+                return;
+            }
+        }
+    }
+
 
     public static ArticleLab get(Context context){
         if(sArticleLab == null){

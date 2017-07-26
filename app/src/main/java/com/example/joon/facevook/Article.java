@@ -30,6 +30,9 @@ public class Article {
         mId = UUID.randomUUID();
     }
 
+    public void setLikes(int likes){
+        mLikes+=likes;
+    }
     public Article(){
         mId = UUID.randomUUID();
     }
